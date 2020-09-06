@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block title %}List{% endblock title %}
+
+{% block content %}
+
+{% for pet in pets %}
+    {% if pet.available %}
+        <h1>{{pet.name}}</h1>
+        <h1>{{pet.price}}</h1>
+        <a href="{% url 'pet-detail' pet.id %}">More</a>
+
+    {% endif %}
+{% endfor %}
+
+
+{% endblock content %}
