@@ -3,15 +3,48 @@
 {% block title %}List{% endblock title %}
 
 {% block content %}
+<div class="row">
+  {% for pet in pets %}
+  <div  class=" col-12 col-sm-6 col-md-4">
+			<div  style="background-color:#F77948 " class="card my-3">
+        {% if pet.image %}
+        <img class="card-img-top" src="{{pet.image.url}}" alt="Hey Noob, look at me...">
+        {% endif %}
 
-{% for pet in pets %}
-    {% if pet.available %}
-        <h1>{{pet.name}}</h1>
-        <h1>{{pet.price}}</h1>
-        <a href="{% url 'pet-detail' pet.id %}">More</a>
+      <div class="card-body" >
+          <h5 class="card-title"> {{pet.name}}</h5>
 
-    {% endif %}
-{% endfor %}
+          <a >
+    <h1 class="card-text" >
+      {{pet.price}}
+      <small>
+      
+      </small>
+    </h1>
+  </a>
+  <hr>
+    </div>
+    <ul class="list-group list-group-flush">
+          <li class="list-group-item text-center">
+              <a href="{% url 'pet-detail' pet.id %}" class="btn btn-outline-dark">View</a>
+          </li>
+        </ul>
+      </div>
+  </div>
+
+
+
+
+  {% endfor %}
+
+
+		  </div>
+
+
+
+
+
+
 
 
 {% endblock content %}

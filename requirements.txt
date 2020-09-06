@@ -1,6 +1,9 @@
 asgiref==3.2.10
 Django==3.1.1
 django-crispy-forms==1.9.2
+<<<<<<< HEAD
 Pillow==7.2.0
+=======
+>>>>>>> 5015a9f26fb24edf18efb3499a3c3e328e62b154
 pytz==2020.1
 sqlparse==0.3.1
