@@ -4,7 +4,7 @@ from .forms import PetForm
 # Create your views here.
 def pet_list(request):
     context = {
-        "pets": Pet.objects.all()
+        "pets": Pet.objects.all().filter(available=True)
     }
     return render(request, 'list.html', context)
 
